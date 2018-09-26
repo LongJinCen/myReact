@@ -1,11 +1,16 @@
 # myReact
 
 ## Usage
+#### 方式一
+> git  clone xxxxx
+> npm install
+> npm run start
+#### 方式二
+> npm install ljc_react
+> npm install
+> npm run start
 
-在`webpack.config.js`的`entry`中配置你想要运行的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`改为`./src/index.js`
-  git  clone xxxxx
-  npm install
-  npm run start
+在`webpack.config.js`的`entry`属性中配置你想要运行的`src`目录下的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`改为`./src/index.js`，之后执行的将是该文件
 
 # info
 
