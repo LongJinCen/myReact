@@ -1,6 +1,6 @@
 {
   "name": "ljc_react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/LongJinCen/myReact.git"
   },
-  "keywords": ["react", "diff", "React.createElement", "React.diff"],
+  "keywords": [
+    "react",
+    "diff",
+    "React.createElement",
+    "React.diff"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
