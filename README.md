@@ -1,20 +1,20 @@
-# myReact#
+# myReact
 
-##Usage##
+## Usage
 
 在`webpack.config.js`的`entry`中配置你想要运行的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`改为`./src/index.js`
   git  clone xxxxx
   npm install
   npm run start
 
-#info#
+# info
 
 `react`充当`view`层，同时得益于ECMScript2015的`class`，是实现继承更加简单，`state`改变到整个视图的渲染的流程大概像下面这样
 1. 调用`renderDOM`来将我们的组件挂载进DOM结构中
 2. 调用`this.setState()`改变状态
 3. 在`setState`函数中改变我们的状态然后重新调用`render`渲染页面
 
-##react的简单实现 index1.js##
+## react的简单实现 index1.js
 
 在这个文件中，我们简单的实现了`react`的`Component`以及`ReactDOM.render()`也就是文件中的`mount`,当我们有通过点击事件来实现事件响应发的时候，可以通过继承`Component`实现这一功能，该文件实现的总体流程如下
 第一次的初始化过程
