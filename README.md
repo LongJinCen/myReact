@@ -1,34 +1,43 @@
 # myReact
+网上`react`核心机制的文章有很多，但是介绍`react`整个完整的核心流程的却很少，该`demo`适合想深入了解`react`核心机制与整体流程的人。我在这里把`react`从定义组件到渲染以及更新的核心部分都写在`lib`文件中，主要涉及到五个核心文件。
+* `React.js`
+  * 包括`Component`和`createElement`的定义
+* `ReactDom.js`
+  * 定义了`render`方法
+* `Diff.js`
+  * 实现`diff`算法
+* `Patch.js`
+  * 将使用`diff`算法得到的差异应用到页面中
+在`Issues`中有对每个文件进行详细的介绍
+## Install
+#### method one
+```
+git  clone https://github.com/LongJinCen/myReact.git
+npm install
+npm run start
+```
+#### method two
+```
+npm install ljc_react
+npm install
+npm run start
+```
 
 ## Usage
-#### 方式一
-> git  clone xxxxx
-> npm install
-> npm run start
-#### 方式二
-> npm install ljc_react
-> npm install
-> npm run start
+在`webpack.config.js`的`entry`属性中配置你想要运行的`src`目录下的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`属性改为`./src/index.js`，之后执行的将是该文件，同时支持`CommonJs`和`es6`的`import`模块。
 
-在`webpack.config.js`的`entry`属性中配置你想要运行的`src`目录下的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`改为`./src/index.js`，之后执行的将是该文件
+在这里请使用es6的`class`来声名一个组件，我们可以像使用`react`一样使用该`demo`,包括继承`React.Component`,定义一个`render`方法，定义`state`并调用`setState`改变它。
+请查看提供的两个测试文件来帮助你理解如果使用提供的源码
 
-# info
+需要注意的是
+1. 由于这里没有使用`jsx`语法，所以使用的是模板字符串的形式，也就是你的render返回的必须是一个字符串，而且在`React.createElement`的实现上也和官方的有所差别，不过最终都是将`render`返回的转换为一个`virtul-dom`对象。
+2. 在这里不能像`react`里面那样使用组件，如果你想使用一个组件，请使用`组件.render()`的方式通过模板字符串嵌入到当前结构中
+3. 不能绑定事件，这里由于使用的是模板字符串，要绑定事件有很大的难度，所以如果你在测试的过程中不能绑定事件。虽然没有绑定事件，但是事件引起的`state`改变->`diff`->`dom`操作 这一流程仍然写在源码中
 
-`react`充当`view`层，同时得益于ECMScript2015的`class`，是实现继承更加简单，`state`改变到整个视图的渲染的流程大概像下面这样
-1. 调用`renderDOM`来将我们的组件挂载进DOM结构中
-2. 调用`this.setState()`改变状态
-3. 在`setState`函数中改变我们的状态然后重新调用`render`渲染页面
+## More
+关于该`demo`具体的介绍请查看[Issues](https://github.com/LongJinCen/myReact/issues),另外由于水平有限，如有错误的地方，请指出
 
-## react的简单实现 index1.js
+## reference
+> https://github.com/livoras/blog/issues/13
 
-在这个文件中，我们简单的实现了`react`的`Component`以及`ReactDOM.render()`也就是文件中的`mount`,当我们有通过点击事件来实现事件响应发的时候，可以通过继承`Component`实现这一功能，该文件实现的总体流程如下
-第一次的初始化过程
-1. 调用`mount`并调用`Component._render()`等待返回结果，将其插入到节点中,
-2. 在`Component._render()`方法里面调用用户自定义的`render()`
-3. 根据用户自定义`render()`返回的html字符串调用`createDOM()`生成一个新的DOM节点
-4. 给该节点绑定事件并返回我们新的`ele`节点
-5. 将返回阿结果添加到dom中，然后绑定状态改变函数，回调参数为旧的新的两个ele
-状态改变的过程
-1. 调用`setState`将新数据传递过去
-2. 在`setState()`函数中改变我们的state，然后调用`this._render()`,然后重复前面初始化过程中的2-4步
-3. 触发我们绑定的状态改变函数
+> http://huziketang.mangojuice.top/books/react/lesson1
