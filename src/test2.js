@@ -1,6 +1,6 @@
-const React = require('./React')
-const ReactDom = require('./ReactDom')
-const diff = require('./Diff')
+const React = require('../lib/React')
+const ReactDom = require('../lib/ReactDom')
+const diff = require('../lib/Diff')
 var root = document.getElementById('root')
 
 
@@ -60,10 +60,9 @@ class Test2 extends React.Component {
 
 var test1 = new Test1()
 var test2 = new Test2()
-// var virtul_dom1 = test1._render()
-// var virtul_dom2 = test2._render()
-// console.log(virtul_dom1)
-// console.log(virtul_dom2)
-// var result = diff(virtul_dom1, virtul_dom2)
-// console.log(result)
-ReactDom.render(test1, root)
+var virtul_dom1 = test1._render()
+var virtul_dom2 = test2._render()
+console.log(virtul_dom1)
+console.log(virtul_dom2)
+var result = diff(virtul_dom1, virtul_dom2)
+console.log(result)
