@@ -3,8 +3,7 @@
 const React = require('../lib/React')
 const ReactDom = require('../lib/ReactDom')
 
-// 模板html我放在public中，该root表示 至于为什么这里可以使用 请了解webpack的使用
-var root = document.getElementById('root')
+
 
 class Test1 extends React.Component {
   constructor (props) {
@@ -35,6 +34,8 @@ class Test1 extends React.Component {
   }
 }
 
+// 模板html我放在public中，该root表示 至于为什么这里可以使用 请了解webpack的使用
+var root = document.getElementById('root')
 var test1 = new Test1()
 
 ReactDom.render(test1, root)

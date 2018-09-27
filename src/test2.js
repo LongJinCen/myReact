@@ -64,5 +64,7 @@ var virtul_dom1 = test1._render()
 var virtul_dom2 = test2._render()
 console.log(virtul_dom1)
 console.log(virtul_dom2)
+
+// 比较两个virtul_dom的差别
 var result = diff(virtul_dom1, virtul_dom2)
 console.log(result)

@@ -27,7 +27,7 @@ npm run start
 在`webpack.config.js`的`entry`属性中配置你想要运行的`src`目录下的单个入口文件，仅支持单个文件，例如你想要运行`src`下面的`index.js`，那么将`entry`属性改为`./src/index.js`，之后执行的将是该文件，同时支持`CommonJs`和`es6`的`import`模块。
 
 在这里请使用es6的`class`来声名一个组件，我们可以像使用`react`一样使用该`demo`,包括继承`React.Component`,定义一个`render`方法，定义`state`并调用`setState`改变它。
-请查看提供的两个测试文件来帮助你理解如果使用提供的源码
+请务必先查看并运行提供的两个测试文件来帮助你理解如果使用提供的源码
 
 需要注意的是
 1. 由于这里没有使用`jsx`语法，所以使用的是模板字符串的形式，也就是你的render返回的必须是一个字符串，而且在`React.createElement`的实现上也和官方的有所差别，不过最终都是将`render`返回的转换为一个`virtul-dom`对象。
