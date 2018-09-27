@@ -59,6 +59,7 @@ class Test2 extends React.Component {
 
 var test1 = new Test1()
 var test2 = new Test2()
+
 // 生成virtul-dom请调用_render()方法
 var virtul_dom1 = test1._render()
 var virtul_dom2 = test2._render()
