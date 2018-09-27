@@ -19,6 +19,8 @@ npm run start
 #### method two
 ```
 npm install ljc_react
+cd node_modules
+cd ljc_react
 npm install
 npm run start
 ```
