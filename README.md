@@ -34,10 +34,10 @@ npm run start
 需要注意的是
 1. 由于这里没有使用`jsx`语法，所以使用的是模板字符串的形式，也就是你的render返回的必须是一个字符串，而且在`React.createElement`的实现上也和官方的有所差别，不过最终都是将`render`返回的转换为一个`virtul-dom`对象。
 2. 在这里不能像`react`里面那样使用组件，如果你想使用一个组件，请使用`组件.render()`的方式通过模板字符串嵌入到当前结构中
-3. 不能绑定事件，这里由于使用的是模板字符串，要绑定事件有很大的难度，所以如果你在测试的过程中不能绑定事件。虽然没有绑定事件，但是事件引起的`state`改变->`diff`->`dom`操作 这一流程仍然写在源码中
+3. 不能绑定事件，这里由于使用的是模板字符串，要绑定事件有很大的难度，所以你在测试的过程中不能绑定事件。虽然没有绑定事件，但是事件引起的`state`改变->`diff`->`dom`操作 这一流程仍然写在源码中
 
 ## More
-关于该`demo`具体的介绍请查看[Issues](https://github.com/LongJinCen/myReact/issues),另外由于水平有限，如有错误的地方，请指出
+关于该`demo`具体的介绍请查看[Issues](https://github.com/LongJinCen/myReact/issues)中对`react`执行流程的介绍,另外由于水平有限，如有错误的地方，请指出
 
 ## reference
 > https://github.com/livoras/blog/issues/13
