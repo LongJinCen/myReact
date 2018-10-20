@@ -1,4 +1,4 @@
-[xxxxx](https://img.shields.io/github/issues/LongJinCen/myReact.svg)
+![xxxxx](https://img.shields.io/github/issues/LongJinCen/myReact.svg)
 
 # myReact
 网上`react`核心机制的文章有很多，但是介绍`react`整个完整的核心流程的却很少，该`demo`适合想深入了解`react`核心机制与整体流程的人。我在这里把`react`从定义组件到渲染以及更新的核心部分都写在`lib`文件中，主要涉及到五个核心文件。
