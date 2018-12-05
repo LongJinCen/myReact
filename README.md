@@ -43,6 +43,8 @@ npm run start
 ## More
 关于该`demo`具体的介绍请查看[Issues](https://github.com/LongJinCen/myReact/issues)中对`react`执行流程的介绍,另外由于水平有限，如有错误的地方，请指出
 
+## performance
+基于`react diff`算法，可以找到一些优化性能的地方，可以参考我这篇文章，[react性能优化](https://segmentfault.com/a/1190000017190863)
 ## reference
 > https://github.com/livoras/blog/issues/13
 
